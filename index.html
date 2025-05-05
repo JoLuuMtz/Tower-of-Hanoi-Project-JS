@@ -1,84 +1,152 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Tower of Hanoi </title>
-
-    
-</head>
-<body>
-    <h1>Torre de Hanoi</h1>
-    <p class="info">Mueve todos los discos de la primera torre a la última siguiendo las reglas.</p>
-    
-    <div class="controls">
-        <div class="disk-selector">
-            <label for="diskCount">Número de discos:</label>
-            <select id="diskCount">
-                <option value="3" selected>3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-            </select>
-        </div>
-        <button id="reset">Reiniciar Juego</button>
-    </div>
-    
-    <div class="game-container">
-        <div class="towers-container">
-            <div class="tower" id="tower1">
-                <div class="tower-rod"></div>
-                <div class="tower-base"></div>
-                <div class="disk-container" id="disks1"></div>
-                <div class="tower-label">Torre 1</div>
-            </div>
-            <div class="tower" id="tower2">
-                <div class="tower-rod"></div>
-                <div class="tower-base"></div>
-                <div class="disk-container" id="disks2"></div>
-                <div class="tower-label">Torre 2</div>
-            </div>
-            <div class="tower" id="tower3">
-                <div class="tower-rod"></div>
-                <div class="tower-base"></div>
-                <div class="disk-container" id="disks3"></div>
-                <div class="tower-label">Torre 3</div>
-            </div>
-        </div>
-        
-        <div class="stats">
-            <div class="stat">
-                <div class="stat-value" id="moves">0</div>
-                <div class="stat-label">Movimientos</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value" id="min-moves">7</div>
-                <div class="stat-label">Mínimo Movimientos</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value" id="time">00:00</div>
-                <div class="stat-label">Tiempo</div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="modal" id="winModal">
-        <div class="modal-content">
-            <h2>¡Felicidades!</h2>
-            <p>Has completado la Torre de Hanoi en <span id="final-moves">0</span> movimientos.</p>
-            <p>Tu tiempo: <span id="final-time">00:00</span></p>
-            <button id="play-again">Jugar de nuevo</button>
-        </div>
-    </div>
-    
-    <script type="module" src="app.js">   </script>
+    <head>
+        <meta charset="UTF-8">
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        >
+        <link rel="stylesheet" href="style.css">
+        <title>Tower of Hanoi</title>
 
 
-    <footer>
-        <p>Desarrollado por Eric Papi riki  Arias  </p><br>
-        
-    </footer>
-</body>
+
+    </head>
+    <body>
+        <h1>Torre de Hanoi</h1>
+        <p class="info">
+            Mueve todos los discos de la primera torre a la última siguiendo las reglas.
+        </p>
+
+
+        <div class="controls">
+            <div class="disk-selector">
+                <label for="diskCount">Número de discos:</label>
+                <select id="diskCount">
+                    <option
+                        value="3"
+                        selected
+                    >
+                        3
+                    </option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
+            </div>
+            <button id="reset">Reiniciar Juego</button>
+        </div>
+
+
+        <div class="game-container">
+            <div class="towers-container">
+                <div
+                    class="tower"
+                    id="tower1"
+                >
+                    <div class="tower-rod"></div>
+                    <div class="tower-base"></div>
+                    <div
+                        class="disk-container"
+                        id="disks1"
+                    ></div>
+                    <div class="tower-label">Torre 1</div>
+                </div>
+                <div
+                    class="tower"
+                    id="tower2"
+                >
+                    <div class="tower-rod"></div>
+                    <div class="tower-base"></div>
+                    <div
+                        class="disk-container"
+                        id="disks2"
+                    ></div>
+                    <div class="tower-label">Torre 2</div>
+                </div>
+                <div
+                    class="tower"
+                    id="tower3"
+                >
+                    <div class="tower-rod"></div>
+                    <div class="tower-base"></div>
+                    <div
+                        class="disk-container"
+                        id="disks3"
+                    ></div>
+                    <div class="tower-label">Torre 3</div>
+                </div>
+            </div>
+
+
+            <div class="stats">
+                <div class="stat">
+                    <div
+                        class="stat-value"
+                        id="moves"
+                    >
+                        0
+                    </div>
+                    <div class="stat-label">Movimientos</div>
+                </div>
+                <div class="stat">
+                    <div
+                        class="stat-value"
+                        id="min-moves"
+                    >
+                        7
+                    </div>
+                    <div class="stat-label">Mínimo Movimientos</div>
+                </div>
+                <div class="stat">
+                    <div
+                        class="stat-value"
+                        id="time"
+                    >
+                        00:00
+                    </div>
+                    <div class="stat-label">Tiempo</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div
+            class="modal"
+            id="winModal"
+        >
+            <div class="modal-content">
+                <h2>¡Felicidades!</h2>
+                <p>
+                    Has completado la Torre de Hanoi en
+                    <span id="final-moves">0</span>
+                    movimientos.
+                </p>
+                <p>
+                    Tu tiempo:
+                    <span id="final-time">00:00</span>
+                </p>
+                <button id="play-again">Jugar de nuevo</button>
+            </div>
+        </div>
+
+
+        <script
+            type="module"
+            src="app.js"
+        >
+        </script>
+
+
+
+        <footer>
+            <p>
+                Desarrollado por Eric Arias El papi riki del desarrollo, el que las pone a templar en toda la Unisinu
+            </p>
+            <br>
+            <p>Contacto: eric.arias@example.com</p>
+            <p>Gracias Por jugar !</p>
+        </footer>
+    </body>
 </html>
