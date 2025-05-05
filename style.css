@@ -137,10 +137,13 @@ select {
 }
 
 .tower-label {
+    position: absolute;
     font-weight: bold;
-    margin-top: 10px;
-    color: #34495e;
+    margin-top:px;
+    color: #000000;
+    font-size: 20px;
 }
+
 
 .stats {
     display: flex;
